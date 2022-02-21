@@ -10,6 +10,7 @@ int main() {
             break;
         } else
             cout<<"Please try again"<<endl;
+        //For Buffer Input
         cin.seekg(0,ios::end);
         cin.clear();
     }
