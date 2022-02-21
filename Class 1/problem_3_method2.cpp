@@ -16,12 +16,18 @@
 using namespace std;
 int main(){
     int arr[7]={4, 256, 2, 4, 3, 3, 5};
-    int maxNumber= sizeof(arr)/ sizeof(arr[0])+1;
-    int tempArr[maxNumber];
-    for (int i = 0; i < maxNumber; ++i) {
+    int n= sizeof(arr)/ sizeof(arr[0]);
+    int tempArraySize= arr[0];
+    for (int i = 1; i < n; ++i) {
+        if(arr[i]>tempArraySize){
+            tempArraySize=arr[i];
+        }
+    }
+    int tempArr[tempArraySize+1];
+    for (int i = 0; i < tempArraySize+1; ++i) {
         tempArr[i]=0;
     }
-    for (int i = 0; i < maxNumber; ++i) {
+    for (int i = 0; i < tempArraySize+1; ++i) {
         if(tempArr[arr[i]] == 0){
             cout<<arr[i]<<" ";
             tempArr[arr[i]]= 1;
